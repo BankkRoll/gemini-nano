@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import ChromeVersionBadge from "@/components/chat/badge";
 import { Message } from "@/components/chat/message";
 import generateErrorMessage from "@/components/chat/error-message";
-import { toast } from "sonner";
 import { useChromeVersion } from "@/hooks/use-chrome-version";
 
 const Home: React.FC = () => {
@@ -75,7 +74,6 @@ const Home: React.FC = () => {
       }
     } catch (error) {
       console.error("Error reading stream:", error);
-      toast.error("Error reading stream.");
     }
     return responseMessage;
   };
@@ -131,7 +129,6 @@ const Home: React.FC = () => {
         loading: false,
       });
       setMessage("");
-      toast.success("Message sent successfully.");
     } catch (error: any) {
       setMessage("");
       console.error("Error during AI session:", error);
@@ -143,7 +140,6 @@ const Home: React.FC = () => {
         fromUser: false,
         loading: false,
       });
-      toast.error("Error during AI session.");
     } finally {
       setMessage("");
       setIsLoading(false);
