@@ -1,6 +1,7 @@
 // src/pages/_app.tsx
 import "@/styles/globals.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
 import Navbar from "@/components/ui/navbar";
 import { ThemeProvider } from "@/components/ui/theme-provider";
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </main>
       </div>
       <Toaster />
+      <Analytics />
     </ThemeProvider>
   );
 }
